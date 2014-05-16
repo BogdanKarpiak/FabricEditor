@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Canvas demo</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/fabric.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <script>
+        $(function() {
+            $( "#accordion" ).accordion();
+        });
+    </script>
+    <script type="text/javascript" src="js/index.js"></script>
+
+</head>
+<body>
+
+  <menu>
+      <div class="rightMenuBar">
+          <button type="button" class="btn btn-default btn-sm">
+              <span class="glyphicon glyphicon-align-justify"></span>
+          </button>
+      </div>
+      <div class="mainMenuBar">
+          <div id="accordion">
+              <h3>text</h3>
+              <div>
+                  <p>
+                      Mauris mauris
+                      Mauris mauris
+                      Mauris mauris
+                      Mauris mauris
+                      Mauris mauris
+                  </p>
+              </div>
+              <h3>image</h3>
+              <div>
+                  <p>
+                      Sed non urna.
+                  </p>
+              </div>
+              <h3>svg</h3>
+              <div>
+                  <p>
+                      Nam enim risus
+                  </p>
+              </div>
+              <h3>free draw</h3>
+              <div>
+                  <p>
+                      Cras dictum.
+                  </p>
+                  <p>
+                      Suspendisse eu nisl.
+                  </p>
+              </div>
+              <h3>canvas</h3>
+              <div>
+                  <p>
+                      Cras dictum.
+                  </p>
+                  <p>
+                      Suspendisse eu nisl.
+                  </p>
+              </div>
+          </div>
+      </div>
+  </menu>
+  <div class="canvasField">
+      <canvas id="myCanvas"></canvas>
+  </div>
+
+  <script type="text/javascript" src="js/index.js"></script>
+</body>
+</html>
