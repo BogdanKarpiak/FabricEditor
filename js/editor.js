@@ -1,7 +1,7 @@
 (function() {
     var $ = function(id){return document.getElementById(id)};
 
-    var canvas = this.__canvas = new fabric.Canvas('myCanvas', {
+    var canvas = new fabric.Canvas('myCanvas', {
         isDrawingMode: true
     });
 
@@ -107,10 +107,12 @@
         };
 
         var img = new Image();
-        img.src = '../images/icon.gif';
-
-        var texturePatternBrush = new fabric.PatternBrush(canvas);
-        texturePatternBrush.source = img;
+        img.src = "http://upload.wikimedia.org/wikipedia/en/archive/3/35/20140115022931!Front_Row_Icon.png";
+        img.onload = function(){
+            texturePatternBrush = new fabric.PatternBrush(canvas);
+            texturePatternBrush.source = img;
+        }
+        var texturePatternBrush;
     }
 
     $('drawing-mode-selector').onchange = function() {
@@ -138,6 +140,7 @@
             canvas.freeDrawingBrush.color = drawingColorEl.value;
             canvas.freeDrawingBrush.width = parseInt(drawingLineWidthEl.value, 10) || 1;
             canvas.freeDrawingBrush.shadowBlur = parseInt(drawingShadowWidth.value, 10) || 0;
+
         }
     };
 
@@ -165,5 +168,7 @@
         canvas.freeDrawingBrush.color = drawingColorEl.value;
         canvas.freeDrawingBrush.width = parseInt(drawingLineWidthEl.value, 10) || 1;
         canvas.freeDrawingBrush.shadowBlur = 0;
+
     }
+
 })();
