@@ -13,8 +13,8 @@
     <!-- Latest compiled and minified JavaScript -->
     <script type="text/javascript" src="js/jquery.js"></script>
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-    <!--<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/fabric.js/1.2.0/fabric.all.min.js"></script>-->
-    <script src="js/fabric.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/fabric.js/1.2.0/fabric.all.min.js"></script>
+   <!-- <script src="js/fabric.js"></script>-->
     <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
     <script>
@@ -57,14 +57,18 @@
                   </p>
               </div>
               <h3>svg</h3>
-              <div>
-                  <p>
-                      Nam enim risus
-                  </p>
+              <div id="svgArea">
+                  <textarea id="svgConsole"></textarea>
+                  <button type="button" class="btn btn-info" id="loadSvgButton">
+                      Load
+                  </button>
+                  <button type="button" class="btn btn-info" id="deleteSvg">
+                      Delete
+                  </button>
               </div>
-              <h3>free draw</h3>
+              <h3 id="drawBox">free draw</h3>
               <div id="freeDrawBlock">
-                  <button id="drawing-mode" class="btn btn-info">Cancel drawing mode</button><br>
+                  <button id="drawing-mode" class="btn btn-info">Enter drawing mode</button><br>
                   <button id="clear-canvas" class="btn btn-info">Clear</button><br>
 
                   <div id="drawing-mode-options">
@@ -81,6 +85,7 @@
                           <option>diamond</option>
                           <option>texture</option>
                       </select><br>
+
 
                       <label for="drawing-line-width">Line width:</label>
                       <span class="info">30</span><input type="range" value="30" min="0" max="150" id="drawing-line-width"><br>
@@ -99,14 +104,12 @@
                   </div>
               </div>
               <h3>canvas</h3>
-              <div>
-                  <p>
-                      Cras dictum.
-                  </p>
-                  <p>
-                      Suspendisse eu nisl.
-                  </p>
+              <div id="backgroundAndOverlay">
+                    <label for="setBackgroundColor">Background Color:</label>
+                    <input type="color" value="#5bc0de" id="setBackgroundColor">
+                    <input type="button" class="btn btn-info" id="overlay" value="Overlay">
               </div>
+
           </div>
       </div>
   </menu>
