@@ -16,7 +16,7 @@ $( dom.$rightMenuBarBt ).click(function() {
 
 function openMenu() {
     $( dom.$mainMenuBar ).css('display', 'block');
-    $( dom.$menu ).animate({width: '300px'}, 500);
+    $( dom.$menu ).animate({width: '450px'}, 500);
 }
 function closeMenu() {
     $( dom.$menu ).animate({width: '50px'}, 500);

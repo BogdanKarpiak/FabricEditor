@@ -5,18 +5,17 @@
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-
     <!-- Optional theme -->
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
-
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/jquery.js"></script>
-    <script type="text/javascript" src="js/fabric.js"></script>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
-    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/fabric.js"></script>
     <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
     <script>
         $(function() {
             $( "#accordion" ).accordion({
@@ -24,8 +23,6 @@
             });
         });
     </script>
-    <script type="text/javascript" src="js/index.js"></script>
-
 </head>
 <body>
 
@@ -39,13 +36,18 @@
           <div id="accordion">
               <h3>text</h3>
               <div>
-                  <p>
+                  <div class="input-group">
+                      <button class="btn btn-default" id="addButton" type="button">Go!</button>
+                      <input type="text" id="">
+                  </div><!-- /input-group -->
+                  <!--<input id="textInputToAdd" type="text">-->
+                  <!--<p>
                       Mauris mauris
                       Mauris mauris
                       Mauris mauris
                       Mauris mauris
                       Mauris mauris
-                  </p>
+                  </p>-->
               </div>
               <h3>image</h3>
               <div>
@@ -100,5 +102,6 @@
   </div>
 
   <script type="text/javascript" src="js/index.js"></script>
+  <script type="text/javascript" src="js/editor.js"></script>
 </body>
 </html>
