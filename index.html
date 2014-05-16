@@ -62,28 +62,40 @@
                   </p>
               </div>
               <h3>free draw</h3>
-              <div>
-                  <label for="drawing-mode-selector">Mode:</label>
-                  <select id="drawing-mode-selector" bind-value-to="drawingMode">
-                      <option value="Pencil">Pencil</option>
-                      <option value="Circle">Circle</option>
-                      <option value="Spray">Spray</option>
-                      <option value="Pattern">Pattern</option>
+              <div id="freeDrawBlock">
+                  <button id="drawing-mode" class="btn btn-info">Cancel drawing mode</button><br>
+                  <button id="clear-canvas" class="btn btn-info">Clear</button><br>
 
-                      <option value="hline">hline</option>
-                      <option value="vline">vline</option>
-                      <option value="square">square</option>
-                      <option value="diamond">diamond</option>
-                      <option value="texture">texture</option>
-                  </select>
-                  <br>
-                  <label for="drawing-line-width">Line width:</label>
-                  <br>
-                  <label for="drawing-color">Line color:</label>
-                  <input type="color" value="#005E7A" bind-value-to="drawingLineColor">
-                  <br>
-                  <label for="drawing-shadow-width">Line shadow width:</label>
-                  <input type="range" value="0" min="0" max="50" bind-value-to="drawingLineShadowWidth">
+                  <div id="drawing-mode-options">
+                      <label for="drawing-mode-selector">Mode:</label>
+                      <select id="drawing-mode-selector">
+                          <option>Pencil</option>
+                          <option>Circle</option>
+                          <option>Spray</option>
+                          <option>Pattern</option>
+
+                          <option>hline</option>
+                          <option>vline</option>
+                          <option>square</option>
+                          <option>diamond</option>
+                          <option>texture</option>
+                      </select><br>
+
+                      <label for="drawing-line-width">Line width:</label>
+                      <span class="info">30</span><input type="range" value="30" min="0" max="150" id="drawing-line-width"><br>
+
+                      <label for="drawing-color">Line color:</label>
+                      <input type="color" value="#5bc0de" id="drawing-color"><br>
+
+                      <label for="drawing-shadow-color">Shadow color:</label>
+                      <input type="color" value="#5bc0de" id="drawing-shadow-color"><br>
+
+                      <label for="drawing-shadow-width">Shadow width:</label>
+                      <span class="info">0</span><input type="range" value="0" min="0" max="50" id="drawing-shadow-width"><br>
+
+                      <label for="drawing-shadow-offset">Shadow offset:</label>
+                      <span class="info">0</span><input type="range" value="0" min="0" max="50" id="drawing-shadow-offset"><br>
+                  </div>
               </div>
               <h3>canvas</h3>
               <div>
@@ -98,7 +110,7 @@
       </div>
   </menu>
   <div class="canvasField">
-      <canvas id="myCanvas"></canvas>
+      <canvas id="myCanvas" width="574" height="768"></canvas>
   </div>
 
   <script type="text/javascript" src="js/index.js"></script>
