@@ -23,10 +23,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="editor.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="editor.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/html/editor.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="11" selection-start="76" selection-end="76" vertical-scroll-proportion="0.14550643" vertical-offset="0" max-vertical-offset="701">
+            <state line="7" column="0" selection-start="99" selection-end="99" vertical-scroll-proportion="-4.576923" vertical-offset="0" max-vertical-offset="255">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="editor.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/js/editor.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="727">
               <folding />
             </state>
           </provider>
@@ -46,6 +55,7 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/html/editor.html" />
+        <option value="$PROJECT_DIR$/js/editor.js" />
       </list>
     </option>
   </component>
@@ -88,6 +98,20 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="FabricEditor" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FabricEditor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FabricEditor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -229,7 +253,14 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/html/editor.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="11" selection-start="76" selection-end="76" vertical-scroll-proportion="0.14550643" vertical-offset="0" max-vertical-offset="701">
+        <state line="7" column="0" selection-start="99" selection-end="99" vertical-scroll-proportion="-4.576923" vertical-offset="0" max-vertical-offset="255">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/editor.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="727">
           <folding />
         </state>
       </provider>
