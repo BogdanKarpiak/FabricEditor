@@ -150,32 +150,32 @@
          if (canvas.freeDrawingBrush) {
              canvas.freeDrawingBrush.color = drawingColorEl.value;
              canvas.freeDrawingBrush.width = parseInt(drawingLineWidthEl.value, 10) || 1;
-             canvas.freeDrawingBrush.shadowBlur = parseInt(drawingShadowWidth.value, 10) || 0;
-             canvas.freeDrawingBrush.shadowBlur = parseInt(drawingShadowWidth.value, 10) || 0;
-             canvas.freeDrawingBrush.shadowColor =  drawingShadowColorEl.value;
-             canvas.freeDrawingBrush.shadowOffsetX =
-             canvas.freeDrawingBrush.shadowOffsetY = parseInt(drawingShadowOffset.value, 10) || 0;
-
+             canvas.freeDrawingBrush.shadow = {
+                 color:drawingShadowColorEl.value,
+                 blur: parseInt(drawingShadowWidth.value, 10) || 0,
+                 offsetX:parseInt(drawingShadowOffset.value, 10) || 0,
+                 offsetY:parseInt(drawingShadowOffset.value, 10) || 0
+             }
          }
      };
-
+      canvas.freeDrawingBrush.shadow = {};
      drawingColorEl.onchange = function() {
         canvas.freeDrawingBrush.color = this.value;
      };
      drawingShadowColorEl.onchange = function() {
-        canvas.freeDrawingBrush.shadowColor = this.value;
+        canvas.freeDrawingBrush.shadow['color'] = this.value;
      };
      drawingLineWidthEl.onchange = function() {
          canvas.freeDrawingBrush.width = parseInt(this.value, 10) || 1;
          this.previousSibling.innerHTML = this.value;
      };
      drawingShadowWidth.onchange = function() {
-         canvas.freeDrawingBrush.shadowBlur = parseInt(this.value, 10) || 0;
+         canvas.freeDrawingBrush.shadow['blur'] = parseInt(this.value, 10) || 0;
          this.previousSibling.innerHTML = this.value;
      };
      drawingShadowOffset.onchange = function() {
-         canvas.freeDrawingBrush.shadowOffsetX =
-         canvas.freeDrawingBrush.shadowOffsetY = parseInt(this.value, 10) || 0;
+         canvas.freeDrawingBrush.shadow['offsetX'] =
+         canvas.freeDrawingBrush.shadow['offsetY'] = parseInt(this.value, 10) || 0;
          this.previousSibling.innerHTML = this.value;
      };
       background.onchange = function(){
