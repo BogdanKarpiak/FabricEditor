@@ -5,11 +5,7 @@
     <bookmark url="file://$PROJECT_DIR$/js/editor.js" mnemonic="4" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="477bbf1e-fb8f-491b-8b9a-542b2067a7b7" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/editor.js" afterPath="$PROJECT_DIR$/js/editor.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/style.css" afterPath="$PROJECT_DIR$/css/style.css" />
-    </list>
+    <list default="true" id="477bbf1e-fb8f-491b-8b9a-542b2067a7b7" name="Default" comment="" />
     <ignored path="FabricEditor.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -230,7 +226,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1696" height="1018" extended-state="6" />
+    <frame x="-8" y="-8" width="1696" height="1018" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
