@@ -23,6 +23,8 @@
          setOverlay = getElem('overlay'),
          deleteOverlay = getElem('deleteOverlay'),
          imageSource = getElem('imageSource'),
+         imageLeft = getElem('imageLeft'),
+         imageTop = getElem('imageTop'),
          deleteSvg = getElem('deleteSvg');
 
      clearEl.onclick = function() { canvas.clear() };
@@ -222,12 +224,26 @@
 
       setOverlay.onclick = function(){
           if (imageSource){
-              canvas.controlsAboveOverlay = true;
-              canvas.setOverlayImage(imageSource.value, canvas.renderAll.bind(canvas));
+              fabric.overlayImageStretch = true
+              canvas.setOverlayImage(imageSource.value, canvas.renderAll.bind(canvas), {
+                  left: 0,
+                  top: 0
+              });
           }
       };
+
       deleteOverlay.onclick = function(){
           canvas.setOverlayImage(null, canvas.renderAll.bind(canvas));
-      }
+      };
+
+      $('#imageTop,#imageLeft').change(function(){
+          if(imageSource.value){
+              canvas.setOverlayImage(imageSource.value, canvas.renderAll.bind(canvas), {
+                  left: +imageLeft.value,
+                  top: +imageTop.value
+              });
+          }
+          this.previousSibling.innerHTML = this.value;
+      });
 
   })();

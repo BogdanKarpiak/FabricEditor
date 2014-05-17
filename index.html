@@ -104,10 +104,19 @@
               </div>
               <h3>canvas</h3>
               <div id="backgroundAndOverlay">
+
                     <label for="setBackgroundColor">Background color:</label>
                     <input type="color" value="#5bc0de" id="setBackgroundColor">
+
                     <label for="imageSource"> Image source: </label>
                     <textarea id="imageSource"></textarea>
+
+                    <label for="imageTop">Image top:</label>
+                    <span class="info">0</span><input type="range" value="0" min="0" max="500" id="imageTop"><br>
+
+                    <label for="imageLeft">Image left:</label>
+                    <span class="info">0</span><input type="range" value="0" min="0" max="500" id="imageLeft"><br>
+
                     <input type="button" class="btn btn-info" id="overlay" value="Set overlay image">
                     <input type="button" class="btn btn-info" id="deleteOverlay" value ="Delete overlay image">
               </div>
