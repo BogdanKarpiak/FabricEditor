@@ -19,6 +19,10 @@
          clearEl = getElem('clear-canvas'),
          loadSvg = getElem('loadSvgButton'),
          svgConsole = getElem('svgConsole'),
+         background = getElem('setBackgroundColor'),
+         setOverlay = getElem('overlay'),
+         deleteOverlay = getElem('deleteOverlay'),
+         imageSource = getElem('imageSource'),
          deleteSvg = getElem('deleteSvg');
 
      clearEl.onclick = function() { canvas.clear() };
@@ -147,6 +151,10 @@
              canvas.freeDrawingBrush.color = drawingColorEl.value;
              canvas.freeDrawingBrush.width = parseInt(drawingLineWidthEl.value, 10) || 1;
              canvas.freeDrawingBrush.shadowBlur = parseInt(drawingShadowWidth.value, 10) || 0;
+             canvas.freeDrawingBrush.shadowBlur = parseInt(drawingShadowWidth.value, 10) || 0;
+             canvas.freeDrawingBrush.shadowColor =  drawingShadowColorEl.value;
+             canvas.freeDrawingBrush.shadowOffsetX =
+             canvas.freeDrawingBrush.shadowOffsetY = parseInt(drawingShadowOffset.value, 10) || 0;
 
          }
      };
@@ -170,6 +178,11 @@
          canvas.freeDrawingBrush.shadowOffsetY = parseInt(this.value, 10) || 0;
          this.previousSibling.innerHTML = this.value;
      };
+      background.onchange = function(){
+          console.log(this.value);
+          canvas.backgroundColor = this.value;
+          canvas.renderAll();
+      }
 
      if (canvas.freeDrawingBrush) {
          canvas.freeDrawingBrush.color = drawingColorEl.value;
@@ -205,6 +218,16 @@
              drawingModeEl.innerHTML = 'Enter drawing mode';
              drawingOptionsEl.style.display = 'none';
          }
-     })
+     });
+
+      setOverlay.onclick = function(){
+          if (imageSource){
+              canvas.controlsAboveOverlay = true;
+              canvas.setOverlayImage(imageSource.value, canvas.renderAll.bind(canvas));
+          }
+      };
+      deleteOverlay.onclick = function(){
+          canvas.setOverlayImage(null, canvas.renderAll.bind(canvas));
+      }
 
   })();
