@@ -50,11 +50,52 @@
                   </p>-->
               </div>
               <h3>image</h3>
-              <div>
-                  <p>
-                      Sed non urna.
-                  </p>
+              <div class="imgTab">
+                  <input type="file" id="uploadImg" class="btn btn-default btn-sm"/>
+                     <!-- Add image&#32;
+                      <span class="glyphicon glyphicon-picture"></span>-->
+
+                  <label for="imgOpacity">Opacity:</label>
+                  <span class="info">0</span><input type="range" value="0" min="0" max="1" step="0.01" id="imgOpacity"><br>
+
+                  <label for="imgShadowBlur">Shadow Blur:</label>
+                  <span class="info">0</span><input type="range" value="0" min="0" max="200" step="1" id="imgShadowBlur"><br>
+
+                  <label for="imgShadowOffsetX">Shadow OffsetX:</label>
+                  <span class="info">0</span><input type="range" value="0" min="0" max="200" step="1" id="imgShadowOffsetX"><br>
+
+                  <label for="imgShadowColor">Shadow color:</label>
+                  <input type="color" value="#5bc0de" id="imgShadowColor"><br>
+
+                  <!--<label>Opacity:<div id="sliderOpacImg"></div></label>
+                  <label>Shadow:<div id="sliderShadImg"></div></label>-->
+
+                  <button type="button" id="imageFlipX" class="btn btn-default btn-sm" >
+                      FlipX&#32;
+                      <span class="glyphicon glyphicon-adjust"></span>
+                  </button>
+                  <button type="button" id="imageFlipY" class="btn btn-default btn-sm">
+                      FlipY&#32;
+                      <span class="glyphicon glyphicon-adjust"></span>
+                  </button>
+                  <button type="button" class="btn btn-default btn-sm">
+                      Filter&#32;
+                      <span class="glyphicon glyphicon-eye-open"></span>
+                  </button></br>
+                  <label for="filterMode">
+                      Filter:</label>
+                  <select id='filterMode'>
+                      <option value="grayscale">Grayscale</option>
+                      <option value="sepia">Sepia</option>
+                      <option value="invert">Invert</option>
+                      <option value="sharpen">Sharpen</option>
+                  </select><br>
+                  <button type="button" id="deleteImage" class="btn btn-default btn-sm">
+                      Delete image&#32;
+                      <span class="glyphicon glyphicon-eye-open"></span>
+                  </button>
               </div>
+
               <h3>svg</h3>
               <div id="svgArea">
                   <textarea id="svgConsole"></textarea>

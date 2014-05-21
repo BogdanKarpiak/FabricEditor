@@ -25,7 +25,12 @@
          imageSource = getElem('imageSource'),
          imageLeft = getElem('imageLeft'),
          imageTop = getElem('imageTop'),
-         deleteSvg = getElem('deleteSvg');
+         deleteSvg = getElem('deleteSvg'),
+         uploadImg = getElem('uploadImg'),
+         uploadImg = getElem('uploadImg'),
+         imageOpacity = getElem('imgOpacity'),
+         imgShadowOffsetX = getElem('mgShadowOffsetX');
+
 
      clearEl.onclick = function() { canvas.clear() };
 
@@ -148,7 +153,6 @@
          else {
             canvas.freeDrawingBrush = new fabric[this.value + 'Brush'](canvas);
          }
-
          if (canvas.freeDrawingBrush) {
              canvas.freeDrawingBrush.color = drawingColorEl.value;
              canvas.freeDrawingBrush.width = parseInt(drawingLineWidthEl.value, 10) || 1;
@@ -185,13 +189,60 @@
           canvas.backgroundColor = this.value;
           canvas.renderAll();
       }
+      imageOpacity.onchange = function() {
+          var opacity = this.value;
+          var obj = canvas.getActiveObject();
+          if( obj && canvas.getActiveObject().isImg ){
+              obj.setOpacity(+opacity);
+              canvas.renderAll();
+          }
+          this.previousSibling.innerHTML = opacity;
+      };
+      $('#imgShadowColor, #imgShadowOffsetX,#imgShadowBlur').on('change',function(e){
+          var value = this.value;
+          var obj = canvas.getActiveObject();
+          if( obj && canvas.getActiveObject().isImg){
+              obj.setShadow({
+                  color: $('#imgShadowColor').val(),
+                  blur: $('#imgShadowBlur').val(),
+                  offsetX: $('#imgShadowOffsetX').val()
+              });
+              canvas.renderAll();
+          }
+          this.previousSibling.innerHTML = value;
+      });
+
+     function flipImage(direction,object){
+         object.on ('click',function(){
+             var obj = canvas.getActiveObject();
+
+             if( obj && canvas.getActiveObject().isImg){
+                 if(!obj[direction]){
+                     obj[direction] = true;
+                     canvas.renderAll();
+                 } else {
+                     obj[direction] = false;
+                     canvas.renderAll();
+                 }
+             }
+         });
+     }
+
+     flipImage('flipX',$('#imageFlipX'));
+     flipImage('flipY',$('#imageFlipY'));
+
+     $('#deleteImage').click(function(){
+         var obj = canvas.getActiveObject();
+         if( obj && canvas.getActiveObject().isImg){
+            canvas.remove(obj);
+         }
+     })
 
      if (canvas.freeDrawingBrush) {
          canvas.freeDrawingBrush.color = drawingColorEl.value;
          canvas.freeDrawingBrush.width = parseInt(drawingLineWidthEl.value, 10) || 1;
          canvas.freeDrawingBrush.shadowBlur = 0;
      }
-
      svgConsole.value = ('<?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"' +
      ' "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg width="100%" height="100%" version="1.1"' +
      ' xmlns="http://www.w3.org/2000/svg"><rect width="300" height="100" style="fill:rgb(0,0,255);stroke-width:1;stroke:rgb(0,0,0)"/></svg>');
@@ -244,6 +295,56 @@
               });
           }
           this.previousSibling.innerHTML = this.value;
+      });
+
+      uploadImg.onchange = function handleImage(e) {
+          var reader = new FileReader();
+          reader.onload = function (event) {
+              var imgObj = new Image();
+              imgObj.src = event.target.result;
+              console.log(imgObj.src);
+              imgObj.onload = function () {
+
+                  var image = new fabric.Image(imgObj);
+                  image.set({
+                      left: 100,
+                      top: 100,
+                      isImg: true
+                  });
+                  canvas.add(image);
+              }
+          }
+          reader.readAsDataURL(e.target.files[0]);
+          console.log(e.target.files[0]);
+      }
+      //filters section
+
+      function applyFilter(index, filter) {
+          var obj = canvas.getActiveObject();
+          obj.filters[index] = filter;
+          obj.applyFilters(canvas.renderAll.bind(canvas));
+      }
+
+      var filters = ['grayscale', 'invert', 'sepia', 'sharpen'];
+
+      $('#filterMode').change(function() {
+          console.log($(this).val());
+          switch ($(this).val()){
+              case 'grayscale': applyFilter(0,new fabric.Image.filters.Grayscale());
+                break;
+              case 'invert': applyFilter(0,new fabric.Image.filters.Invert());
+                break;
+              case 'sepia': applyFilter(0, new fabric.Image.filters.Sepia());
+                break;
+              case 'sharpen': applyFilter(0, new fabric.Image.filters.Convolute({
+                  matrix: [  0, -1,  0,
+                      -1,  5, -1,
+                      0, -1,  0 ]
+              }));
+                  break;
+              default : alert('unrecognized');
+                break;
+          }
       });
 
   })();
