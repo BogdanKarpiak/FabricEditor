@@ -5,11 +5,7 @@
     <bookmark url="file://$PROJECT_DIR$/js/editor.js" mnemonic="4" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="477bbf1e-fb8f-491b-8b9a-542b2067a7b7" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/editor.js" afterPath="$PROJECT_DIR$/js/editor.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/style.css" afterPath="$PROJECT_DIR$/css/style.css" />
-    </list>
+    <list default="true" id="477bbf1e-fb8f-491b-8b9a-542b2067a7b7" name="Default" comment="" />
     <ignored path="FabricEditor.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -31,10 +27,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="editor.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="editor.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/editor.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="30" column="46" selection-start="1238" selection-end="1238" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="6052">
+            <state line="7" column="8" selection-start="175" selection-end="175" vertical-scroll-proportion="-2.2850242" vertical-offset="2011" max-vertical-offset="6052">
               <folding>
                 <marker date="1400687364049" expanded="true" signature="8989:9039" placeholder="..." />
               </folding>
@@ -60,10 +56,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="style.css" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="style.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="0" selection-start="1805" selection-end="1805" vertical-scroll-proportion="0.5214724" vertical-offset="0" max-vertical-offset="815">
+            <state line="25" column="0" selection-start="1805" selection-end="1805" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="527">
               <folding />
             </state>
           </provider>
@@ -357,15 +353,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/editor.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="46" selection-start="1238" selection-end="1238" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="6052">
-          <folding>
-            <marker date="1400687364049" expanded="true" signature="8989:9039" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="90" column="37" selection-start="4057" selection-end="4064" vertical-scroll-proportion="-11.230769" vertical-offset="1238" max-vertical-offset="3060">
@@ -375,8 +362,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="0" selection-start="1805" selection-end="1805" vertical-scroll-proportion="0.5214724" vertical-offset="0" max-vertical-offset="815">
+        <state line="25" column="0" selection-start="1805" selection-end="1805" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="527">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/editor.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="8" selection-start="175" selection-end="175" vertical-scroll-proportion="-2.2850242" vertical-offset="2011" max-vertical-offset="6052">
+          <folding>
+            <marker date="1400687364049" expanded="true" signature="8989:9039" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
