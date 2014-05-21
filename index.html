@@ -15,6 +15,7 @@
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/fabric.js"></script>
     <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <script src="js/jquery-ui-1.10.4.custom.min.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
     <script>
         $(function() {
@@ -37,17 +38,43 @@
               <h3>text</h3>
               <div>
                   <div class="input-group">
-                      <button class="btn btn-default" id="addButton" type="button">Go!</button>
-                      <input type="text" id="">
-                  </div><!-- /input-group -->
-                  <!--<input id="textInputToAdd" type="text">-->
-                  <!--<p>
-                      Mauris mauris
-                      Mauris mauris
-                      Mauris mauris
-                      Mauris mauris
-                      Mauris mauris
-                  </p>-->
+                      <input type="text" id="textAddInput">
+                      <div class="clear"></div>
+                      <p>
+                          Opacity:
+                      </p>
+                      <div id="opacitySlider"></div>
+                      <div class="clear"></div>
+                      <p>
+                          Brightness:
+                      </p>
+                      <div id="brightnessSlider"></div>
+                      <div class="clear"></div>
+                      <div id="fontStyleGroup">
+                          <input type="checkbox" id="bold"><label for="bold">B</label>
+                          <input type="checkbox" id="italic"><label for="italic">I</label>
+                          <input type="checkbox" id="underlined"><label for="underlined">U</label>
+                      </div>
+                      <div class="dropdown">
+                          <button class="btn dropdown-toggle sr-only" type="button" id="dropdownMenu1" data-toggle="dropdown">
+                              Dropdown
+                              <span class="caret"></span>
+                          </button>
+                          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a></li>
+                              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
+                              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
+                              <li role="presentation" class="divider"></li>
+                              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
+                          </ul>
+                      </div>
+
+                      <div class="btn-group btn-group-justified">
+                          <button type="button" class="btn btn-default" id="addButton">Add</button>
+                          <button type="button" class="btn btn-default" id="delButton">Delete</button>
+                      </div>
+
+                  </div>
               </div>
               <h3>image</h3>
               <div>
@@ -88,5 +115,6 @@
 
   <script type="text/javascript" src="js/index.js"></script>
   <script type="text/javascript" src="js/editor.js"></script>
+  <script type="text/javascript" src="js/text.js"></script>
 </body>
 </html>
