@@ -13,7 +13,7 @@
     <!-- Latest compiled and minified JavaScript -->
     <script type="text/javascript" src="js/jquery.js"></script>
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/fabric.js"></script>
+    <script src="js/fabric.js"></script>
     <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
     <script src="js/jquery-ui-1.10.4.custom.min.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
@@ -38,24 +38,53 @@
               <h3>text</h3>
               <div>
                   <div class="input-group">
-                      <input type="text" id="textAddInput">
+                      <input type="text" id="textAddInput" placeholder="Write text here...">
                       <div class="clear"></div>
-                      <p>
-                          Opacity:
-                      </p>
-                      <div id="opacitySlider"></div>
+                      <div id="opacityBox" class="box">
+                          <p>Opacity:</p>
+                          <div id="opacitySlider" class="slider"></div>
+                      </div>
                       <div class="clear"></div>
-                      <p>
-                          Brightness:
-                      </p>
-                      <div id="brightnessSlider"></div>
+                      <div id="shadowBox" class="box">
+                          <p>Shadow:</p>
+                          <label id="shadow-color">
+                              <p>color:</p>
+                              <input type="color">
+                          </label>
+                          <div class="clear"></div>
+                          <div id="h-offset">
+                              <p class="label">horizontal offset:</p>
+                              <div id="shadow-x-offset" class="slider"></div>
+                          </div>
+                          <div class="clear"></div>
+                          <div id="v-offset">
+                              <p class="label">vertical offset:</p>
+                              <div id="shadow-y-offset" class="slider"></div>
+                          </div>
+                          <div class="clear"></div>
+                          <div id="blur">
+                              <p class="label">blur:</p>
+                              <div id="shadow-blur" class="slider"></div>
+                          </div>
+                          <div class="clear"></div>
+                      </div>
                       <div class="clear"></div>
                       <div id="fontStyleGroup">
                           <input type="checkbox" id="bold"><label for="bold">B</label>
                           <input type="checkbox" id="italic"><label for="italic">I</label>
                           <input type="checkbox" id="underlined"><label for="underlined">U</label>
                       </div>
-                      <div class="dropdown">
+                      <input id="spinner" name="spinner" value="30">
+                      <div class="clear"></div>
+                      <select id="fontFamily">
+                          <option style="font-family: Georgia, serif">Georgia</option>
+                          <option style="font-family: 'Times New Roman', Times, serif">Times New Roman</option>
+                          <option>Arial</option>
+                          <option>Tahoma</option>
+                          <option>Verdana</option>
+                      </select>
+                      <div class="clear"></div>
+                      <!--<div class="dropdown">
                           <button class="btn dropdown-toggle sr-only" type="button" id="dropdownMenu1" data-toggle="dropdown">
                               Dropdown
                               <span class="caret"></span>
@@ -67,7 +96,7 @@
                               <li role="presentation" class="divider"></li>
                               <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
                           </ul>
-                      </div>
+                      </div>-->
 
                       <div class="btn-group btn-group-justified">
                           <button type="button" class="btn btn-default" id="addButton">Add</button>
@@ -83,34 +112,76 @@
                   </p>
               </div>
               <h3>svg</h3>
-              <div>
-                  <p>
-                      Nam enim risus
-                  </p>
+              <div id="svgArea">
+                  <textarea id="svgConsole"></textarea>
+                  <button type="button" class="btn btn-info" id="loadSvgButton">
+                      Load
+                  </button>
+                  <button type="button" class="btn btn-info" id="deleteSvg">
+                      Delete
+                  </button>
               </div>
-              <h3>free draw</h3>
-              <div>
-                  <p>
-                      Cras dictum.
-                  </p>
-                  <p>
-                      Suspendisse eu nisl.
-                  </p>
+              <h3 id="drawBox">free draw</h3>
+              <div id="freeDrawBlock">
+                  <button id="drawing-mode" class="btn btn-info">Enter drawing mode</button><br>
+                  <button id="clear-canvas" class="btn btn-info">Clear</button><br>
+
+                  <div id="drawing-mode-options">
+                      <label for="drawing-mode-selector">Mode:</label>
+                      <select id="drawing-mode-selector">
+                          <option>Pencil</option>
+                          <option>Circle</option>
+                          <option>Spray</option>
+                          <option>Pattern</option>
+
+                          <option>hline</option>
+                          <option>vline</option>
+                          <option>square</option>
+                          <option>diamond</option>
+                          <option>texture</option>
+                      </select><br>
+
+
+                      <label for="drawing-line-width">Line width:</label>
+                      <span class="info">30</span><input type="range" value="30" min="0" max="150" id="drawing-line-width"><br>
+
+                      <label for="drawing-color">Line color:</label>
+                      <input type="color" value="#5bc0de" id="drawing-color"><br>
+
+                      <label for="drawing-shadow-color">Shadow color:</label>
+                      <input type="color" value="#5bc0de" id="drawing-shadow-color"><br>
+
+                      <label for="drawing-shadow-width">Shadow width:</label>
+                      <span class="info">0</span><input type="range" value="0" min="0" max="50" id="drawing-shadow-width"><br>
+
+                      <label for="drawing-shadow-offset">Shadow offset:</label>
+                      <span class="info">0</span><input type="range" value="0" min="0" max="50" id="drawing-shadow-offset"><br>
+                  </div>
               </div>
               <h3>canvas</h3>
-              <div>
-                  <p>
-                      Cras dictum.
-                  </p>
-                  <p>
-                      Suspendisse eu nisl.
-                  </p>
+              <div id="backgroundAndOverlay">
+
+                    <label for="setBackgroundColor">Background color:</label>
+                    <input type="color" value="#5bc0de" id="setBackgroundColor">
+
+                    <label for="imageSource"> Image source: </label>
+                    <textarea id="imageSource"></textarea>
+
+                    <label for="imageTop">Image top:</label>
+                    <span class="info">0</span><input type="range" value="0" min="0" max="500" id="imageTop"><br>
+
+                    <label for="imageLeft">Image left:</label>
+                    <span class="info">0</span><input type="range" value="0" min="0" max="500" id="imageLeft"><br>
+
+                    <input type="button" class="btn btn-info" id="overlay" value="Set overlay image">
+                    <input type="button" class="btn btn-info" id="deleteOverlay" value ="Delete overlay image">
               </div>
+
           </div>
       </div>
   </menu>
   <div class="canvasField">
-      <canvas id="myCanvas"></canvas>
+      <canvas id="myCanvas" width="574" height="768"></canvas>
   </div>
 
   <script type="text/javascript" src="js/index.js"></script>

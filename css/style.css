@@ -8,8 +8,18 @@ menu {width: 50px; height: 100%; background-color:#B4B4B4; padding: 0; margin: 0
   .rightMenuBar {width: 50px; height: 100%; border-right: 2px solid #616161; }
     .rightMenuBar button {width: 100%; height: 50px;}
   .mainMenuBar {width: 400px; height: 100%; border-right: 2px solid #616161;  z-index: 9; position: absolute; top: 0; left: 50px; display: none;}
+    #freeDrawBlock {overflow: hidden}
+      #freeDrawBlock input[type = range] { width: 120px; display: inline-block;margin-left: 0; position: relative; top: 5px}
+      #freeDrawBlock label{display: inline-block; margin-right: 8px; margin-bottom: 5px;}
+      #freeDrawBlock span.info ,#backgroundAndOverlay span.info {display: inline-block;margin-right: 10px; width: 35px; background: linear-gradient(to bottom,#5bc0de 0,#2aabd2 100%);color: #ffffff; text-align: center;}
+      #freeDrawBlock .btn {margin: 5px 0; width: 213px}
+      #svgArea textarea {width:100%; height: 200px}
+      #svgArea button {display: block}
+       #svgArea .btn {display:inline-block; margin: 10px 20px 10px 0 }
+    #backgroundAndOverlay input[type = button] {display: block; width: 213px; margin-bottom: 10px}
+    #backgroundAndOverlay textarea {margin: 10px 0; height: 100px; width: 213px}
 
-.canvasField { width: 960px; height: 764px; position: absolute; top: 0; left: 52px;}
+.canvasField { width: 970px; height: 764px; position: absolute; top: 0; left: 50px;}
   #myCanvas {width: 100%; height: 100%;}
 
 .wrapper-dropdown {
@@ -29,4 +39,105 @@ menu {width: 50px; height: 100%; background-color:#B4B4B4; padding: 0; margin: 0
     font-weight: bold;
 }
 
+#spinner {
+    height: 29px;
+    width: 25px;
+    /*linear-gradient(#e6e6e6 50%, #d3d3d3 50%, #e6e6e6);*/
 
+    float: left;
+}
+
+.ui-spinner.ui-widget.ui-widget-content.ui-corner-all {
+    margin: 0 0 0 10px ;
+    background: #e5e5e5;
+}
+
+#fontStyleGroup {
+    float: left;
+}
+
+#shadow-color {
+    margin: 5px 0px ;
+    width: 100%;
+}
+
+#h-offset, #v-offset, #blur {
+    width: 100%;
+    padding: 5px 0px 0px 0px;
+}
+
+#h-offset p {
+    color: #727272;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+#v-offset p {
+    width: 100%;
+    padding: 5px 0px 5px 0px;
+}
+
+#blur p {
+    width: 100%;
+    padding: 5px 0px 5px 0px;
+}
+
+#shadow-color p {
+    color: #727272;
+    font-size: 14px;
+}
+
+#fontFamily {
+    width: 200px;
+    height: 35px;
+    margin: 10px 0 0 0;
+    background: #e5e5e5;
+    border-radius: 10px;
+}
+
+#fontFamily option {
+    background: #dbdddd;
+}
+
+.box {
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid #d4d4d4;
+    padding: 5px 25px 5px 15px;
+    margin: 5px 0;
+}
+
+#textAddInput {
+    margin-bottom: 10px;
+    border-radius: 10px;
+    border: 1px solid #bbbbbb;
+}
+
+/*.slider {
+    width: 100%;
+}*/
+
+#opacitySlider{
+    margin: 5px 10px;
+}
+
+#opacityBox {
+    padding: 5px 15px 5px 15px;
+}
+
+.label {
+    color: #727272;
+    font-size: 14px;
+    margin-bottom: 7px;
+}
+
+#h-offset p {
+    padding-left: 0;
+}
+
+#shadowBox {
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 15px;
+}
